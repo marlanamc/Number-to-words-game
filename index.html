@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers to Words Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Practice converting numbers to English words with this interactive game">
+</head>
+<body>
+    <div class="esol-game">
+        <div class="esol-game-container">
+            <div class="esol-header">
+                <h2>Practice converting numbers to words in English.</h2>
+                <p>Please Select a Number Category:</p>
+            </div>
+
+            <div class="esol-controls">
+                <select class="esol-select" id="numberType">
+                    <option value="">Number Category</option>
+                    <option value="benchmark">Round Numbers (1,000 | 5 million | 1 billion)</option>
+                    <option value="all">All Cardinal Numbers (Random Ranges)</option>
+                    <option value="basic">Basic Numbers (0-99)</option>
+                    <option value="hundreds">Hundreds (100-999)</option>
+                    <option value="thousands">One Thousand to Ten Thousand (1,000-9,999)</option>
+                    <option value="ten-thousands">Ten Thousands (10,000-99,999)</option>
+                    <option value="hundred-thousands">Hundred Thousands (100,000-999,999)</option>
+                    <option value="millions">Millions</option>
+                    <option value="billions">Billions</option>
+                    <option value="trillions">Trillions</option>
+                    <option value="ordinal">Ordinal Numbers (1st, 2nd, 3rd...)</option>
+                    <option value="years">Years (1100-2099)</option>
+                </select>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="stats">
+                <div class="stat-item correct" id="correctStat">
+                    Correct: <span id="correctCount">0</span>
+                    <div id="standardFormat" style="font-size: 0.9em; margin-top: 4px; white-space: pre-line;"></div>
+                </div>
+                <div class="stat-item incorrect" id="incorrectStat">Incorrect: <span id="incorrectCount">0</span></div>
+                <div class="stat-item percentage">
+                    <span id="successRateLabel">Success Rate:</span> <span id="percentage">0%</span>
+                </div>
+            </div>
+
+            <div class="game-display">
+                <div class="number" id="numberDisplay"></div>
+                <div class="input-area">
+                    <textarea id="answer" placeholder="Write the number in words..." rows="3"></textarea>
+                </div>
+            </div>
+
+            <button class="esol-button" onclick="checkAnswer()">Check Answer</button>
+            <button class="esol-button" onclick="generateNewNumber()">Next Number →</button>
+
+            <div class="esol-instructions">
+                <h3>Number Categories Explained:</h3>
+                <ul>
+                    <li><strong>Round Numbers:</strong> Common benchmark numbers (e.g., one thousand, five million, one billion)</li>
+                    <li><strong>All Cardinal Numbers:</strong> Any number from 0 to trillions</li>
+                    <li><strong>Basic Numbers:</strong> 0 to 99 (e.g., twenty-five)</li>
+                    <li><strong>Hundreds:</strong> 100 to 999 (e.g., three hundred and forty-five)</li>
+                    <li><strong>Ten Thousands:</strong> 10,000 to 99,999 (e.g., forty-five thousand)</li>
+                    <li><strong>Hundred Thousands:</strong> 100,000 to 999,999 (e.g., three hundred and forty-five thousand)</li>
+                    <li><strong>Millions/Billions/Trillions:</strong> Numbers in respective ranges</li>
+                    <li><strong>Ordinal Numbers:</strong> Numbers showing position or rank (1st → first, 2nd → second)</li>
+                    <li><strong>Years:</strong> 1100-2099 (e.g., nineteen oh five, two thousand and one)</li>
+                </ul>
+                <p><strong>Keyboard Shortcuts:</strong></p>
+                <ul>
+                    <li><strong>Enter:</strong> Check your answer</li>
+                    <li><strong>Right Arrow →:</strong> Get next number</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
